@@ -1,0 +1,32 @@
+var age = prompt("Please provide your age.");
+var gender = prompt("Please provide your gender: M or F").toUpperCase();
+var user = prompt("You are walking down the street, when you remember you left something at home. Do you go HOME to get it, CALL someone to pick it up for you, or FORGET about it and keep going?").toUpperCase();
+
+
+switch (user) {
+    case 'CALL':
+        if(age<18) {
+            console.log("You call your Mom, but she doesn't pick up. She might not be home anyway, you realize as you put your phone away.");
+        } else {
+            console.log("You call your friend who lives nearby. Unfortunately, he does not pick up, leaving you still undecided.");
+        }
+        break;
+    case 'HOME':
+        if(age>18 && gender === 'F') {
+            console.log("Still breathing hard from the effort, you arrive back at your house, only to remember that the bag you left has your keys in it!");
+        } else if(age>18 && gender === 'M') {
+            console.log("Huffing and puffing, you get home just to realize - you don't actually have your keys! You must have left them inside somewhere.");
+        } else {
+            console.log("The house is locked when you get home, and despite all of your banging, no one answers the door.");
+        }
+        break;
+    case 'FORGET':
+        if (gender === 'F' || age>25) {
+            console.log("You decide that it isn't worth the effort, and keep walking. The thought keeps preying at your mind, however, and you are still uncertain if you made the right decision.");
+        } else {
+            console.log("You decide that it isn't worth the effort, and keep on your way. It isn't long before 	you're distracted by what's going on around you, anyway, and have forgotten all about what you were 	    missing.");
+        }
+        break;
+    default:
+        console.log("I'm sorry, please try picking one the CAPS options next time.");
+};
